@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { FiSearch } from 'react-icons/fi'
 import './styles.css'
 import api from './services/api'
+import InputCep from './components/Input';
 
 
-const App = () => {
+const Test = () => {
 
 
   const [input, setInput] = useState('')
@@ -58,4 +59,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Test;
