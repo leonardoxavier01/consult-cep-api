@@ -13,7 +13,6 @@ export const Title = styled.h1`
   font-size: 85px;
   color: #fff;
   animation: animationTitle 2s;
-
   @keyframes animationTitle {
     from {
       transform: rotateX(90deg);
