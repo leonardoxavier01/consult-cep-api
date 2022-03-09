@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import api from "../../services/api";
-import { ContainerInput} from "./styles";
+import { ContainerInput, CardCep } from "./styles";
 import Button from "../Button";
-
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 const InputCep = () => {
   const [input, setInput] = useState("");
@@ -34,20 +34,19 @@ const InputCep = () => {
         />
         <Button function={handleSearch} />
       </ContainerInput>
-
-
-       {Object.keys(cep).length > 1 && (
-        <main className="main">
-          <h2>CEP: {cep.cep}</h2>
+      {Object.keys(cep).length > 1 && (
+        <CardCep className="main">
+          <h2>
+            CEP: {cep.cep} <FaMapMarkerAlt size={25} color="#940000" />
+          </h2>
           <span>{cep.logradouro}</span>
           <span>Complemento: {cep.complemento}</span>
           <span>Bairro: {cep.bairro}</span>
           <span>
             {cep.localidade} - {cep.uf}
           </span>
-        </main>
-      )} 
-
+        </CardCep>
+      )}
     </>
   );
 };
